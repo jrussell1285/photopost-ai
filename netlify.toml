@@ -1,0 +1,32 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+  command = "echo 'PhotoPost AI requires no build step.'"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/generate"
+  to = "/.netlify/functions/generate"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/status"
+  to = "/.netlify/functions/status"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "same-origin"
+    Permissions-Policy = "camera=(self), microphone=(), geolocation=()"
+    X-Frame-Options = "SAMEORIGIN"
