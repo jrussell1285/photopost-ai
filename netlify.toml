@@ -1,7 +1,7 @@
 [build]
-  command = "rm -rf unpacked && mkdir unpacked && unzip -q photopost-app.zip -d unpacked"
-  publish = "unpacked/PhotoPost-AI-Netlify/public"
-  functions = "unpacked/PhotoPost-AI-Netlify/netlify/functions"
+  publish = "public"
+  functions = "netlify/functions"
+  command = "echo 'PhotoPost AI requires no build step.'"
 
 [functions]
   node_bundler = "esbuild"

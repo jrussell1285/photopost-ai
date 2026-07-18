@@ -1,0 +1,13 @@
+{
+  "name": "photopost-ai-netlify",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Daily-use photo-to-social-post assistant hosted on Netlify.",
+  "scripts": {
+    "dev": "npx netlify dev",
+    "check": "node --check netlify/functions/generate.js && node --check netlify/functions/status.js && node --check lib/post-utils.js && node --check public/app.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
